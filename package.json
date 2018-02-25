@@ -1,0 +1,26 @@
+{
+  "name": "memory-game",
+  "version": "1.0.0",
+  "description": "Udacity Front End Nanodegree project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Soheevich/Udacity-Project-Memory-Game.git"
+  },
+  "author": "Andrei Filyaev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Soheevich/Udacity-Project-Memory-Game/issues"
+  },
+  "homepage": "https://github.com/Soheevich/Udacity-Project-Memory-Game#readme",
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.9.0"
+  },
+  "dependencies": {
+    "eslint": "^4.18.1"
+  }
+}
