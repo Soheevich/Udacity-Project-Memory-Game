@@ -1,1 +1,1 @@
-const cards=document.querySelectorAll(".main__card"),clicked=c=>{c.target.style.background="red"};cards.forEach(c=>c.addEventListener("click",clicked));
+'use strict';var cards=document.querySelectorAll('.main__card'),clicked=function(c){c.target.style.background='red'};cards.forEach(function(c){return c.addEventListener('click',clicked)});
