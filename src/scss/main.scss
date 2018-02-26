@@ -80,6 +80,11 @@ html, body {
   background: $card;
 }
 
+.main__controls {
+  display: flex;
+  justify-content: space-between;
+}
+
 // *****************
 // FOOTER
 // *****************
