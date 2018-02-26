@@ -1,33 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Acme|Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
 </head>
+
 <body>
-  <header>
+  <div class="grid">
+    <header class="header">
+      <h1 class="header__title">Memory Game</h1>
+    </header>
 
-  </header>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item">
+          <a href="#">New Game</a>
+        </li>
+        <li class="nav__item">
+          <a href="#">Best scores</a>
+        </li>
+        <li class="nav__item">
+          <a href="#">About</a>
+        </li>
+        <li class="nav__item">
+          <a href="#">Contacts</a>
+        </li>
+      </ul>
+    </nav>
 
-  <nav>
-    <ul class="nav">
-      <li><a href="#">New Game</a></li>
-      <li><a href="#">Best scores</a></li>
-      <li><a href="#">About</a></li>
-      <li><a href="#">Contacts</a></li>
-    </ul>
-  </nav>
+    <main class="main">
+      <section class="main__controls">
+        <div class="main__turns">
+          <span class="main__turns-number"></span>
+        </div>
+        <div class="main_new-game">
 
-  <main>
+        </div>
+      </section>
 
-  </main>
+      <section class="main__board">
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+        <div class="main__card"></div>
+      </section>
+    </main>
 
-  <footer>
-    
-  </footer>
+    <footer class="footer">
+      @2018
+    </footer>
+  </div>
+  <script src="scripts/app-min.js"></script>
 </body>
+
 </html>
