@@ -15,7 +15,7 @@ html, body {
   max-width: 100%;
   max-height: 100%;
   display: grid;
-  grid-template: repeat(4, minmax(100px, auto))/auto 75vw auto;
+  grid-template: repeat(4, auto)/auto 75vw auto;
   grid-template-areas: "h h h" "n n n" ". m ." "f f f";
 }
 
