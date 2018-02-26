@@ -1,15 +1,24 @@
 const gulp = require('gulp');
 const autoprefixer = require('gulp-autoprefixer');
-const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
+const pump = require('pump');
+const uglifyjs = require('uglify-es');
 
-gulp.task('compress', () =>
-  gulp
-    .src('./src/scripts/*.js')
-    .pipe(uglify())
-    .pipe(rename({ suffix: '-min' }))
-    .pipe(gulp.dest('./build/scripts')));
+const composer = require('gulp-uglify/composer');
+
+const minify = composer(uglifyjs, console);
+
+gulp.task('compress', (cb) => {
+  const options = {};
+  pump(
+    [gulp.src('src/scripts/*.js'),
+      minify(options),
+      rename({ suffix: '-min' }),
+      gulp.dest('build/scripts')],
+    cb,
+  );
+});
 
 // Compile Sass
 gulp.task('sass', () =>
@@ -20,10 +29,10 @@ gulp.task('sass', () =>
     .pipe(gulp.dest('build/styles')));
 
 // Watch
-gulp.task('watch-css', ['sass'], () => {
+gulp.task('watch-css-js', ['sass', 'compress'], () => {
   gulp.watch(['src/scss/*.scss'], ['sass']);
   gulp.watch(['src/scripts/*.js'], ['compress']);
 });
 
 // Default
-gulp.task('default', ['watch-css']);
+gulp.task('default', ['watch-css-js']);
