@@ -15,7 +15,7 @@ gulp.task('sass', () =>
     .src(['src/scss/*.scss'])
     .pipe(sass({ outputStyle: 'expanded' }).on('error', sass.logError))
     .pipe(autoprefixer({ browsers: ['last 2 versions'], cascade: false }))
-    .pipe(gulp.dest('src/css')));
+    .pipe(gulp.dest('build/styles')));
 
 // Watch
 gulp.task('watch-css', ['sass'], () => {
