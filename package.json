@@ -18,7 +18,10 @@
   "homepage": "https://github.com/Soheevich/Udacity-Project-Memory-Game#readme",
   "devDependencies": {
     "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.9.0"
+    "eslint-plugin-import": "^2.9.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.1.0",
+    "gulp-postcss": "^7.0.1"
   },
   "dependencies": {
     "eslint": "^4.18.1"
