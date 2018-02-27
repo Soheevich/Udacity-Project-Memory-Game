@@ -52,22 +52,19 @@ const newGame = () => {
   let activeCard = null;
   let movesNumber = 0;
 
-  shuffleCards();
-  printMoves(movesNumber);
-
-  // Remove all temporary classes
-  cards.forEach((card) => {
-    card.classList.remove('card__active', 'card__pair');
-  });
-
   // On card click
   const clicked = (e) => {
     if (activeCard) {
+      // Every click after selecting any card will be counted as one move
+
+      // Clicking on the same card will remove its selection
       if (e.target === activeCard) {
         activeCard.classList.remove('card__active');
         activeCard = null;
         movesNumber += 1;
         printMoves(movesNumber);
+
+        // Got a pair, it'll mark them and remove event listeners
       } else if (e.target.firstElementChild.className === activeCard.firstElementChild.className) {
         e.target.classList.add('card__pair');
         activeCard.classList.add('card__pair');
@@ -77,17 +74,30 @@ const newGame = () => {
         activeCard = null;
         movesNumber += 1;
         printMoves(movesNumber);
+
+        // Wrong pair, remove selection from the both cards
       } else {
         activeCard.classList.remove('card__active');
         activeCard = null;
         movesNumber += 1;
         printMoves(movesNumber);
       }
+
+      // Mark a card as selected one
     } else {
       activeCard = e.target;
       activeCard.classList.add('card__active');
     }
   };
+
+  // Calling functions to start the game
+  shuffleCards();
+  printMoves(movesNumber);
+
+  // Remove all temporary classes
+  cards.forEach((card) => {
+    card.classList.remove('card__active', 'card__pair');
+  });
 
   // Clicking on cards
   cards.forEach(card => card.addEventListener('click', clicked));
