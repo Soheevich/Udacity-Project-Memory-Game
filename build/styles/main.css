@@ -76,6 +76,8 @@ html, body {
 }
 
 .main__card {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -92,6 +94,16 @@ html, body {
 
 .card__icon {
   font-size: 3rem;
+  pointer-events: none;
+}
+
+.card__active {
+  border: 5px solid gold;
+}
+
+.card__pair {
+  border: 5px solid green;
+  background: #72c2a3;
 }
 
 .footer {

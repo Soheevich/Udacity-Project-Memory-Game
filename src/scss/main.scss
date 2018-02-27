@@ -91,6 +91,7 @@ html, body {
 }
 
 .main__card {
+  box-sizing: border-box;
   display: flex;
   width: 100%;
   height: 100px;
@@ -101,6 +102,16 @@ html, body {
 
 .card__icon {
   font-size:$font-icon;
+  pointer-events: none;
+}
+
+.card__active {
+  border: 5px solid gold;
+}
+
+.card__pair {
+  border: 5px solid green;
+  background: $card-pair;
 }
 
 // *****************
