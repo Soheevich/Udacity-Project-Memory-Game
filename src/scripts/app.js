@@ -61,8 +61,8 @@ const newGame = () => {
       } else if (e.target.querySelector('.card__icon').className === activeCard.querySelector('.card__icon').className) {
         e.target.classList.add('card__flipped');
         setTimeout(() => {
-          e.target.classList.add('tada');
-          activeCard.classList.add('tada');
+          e.target.classList.add('shake');
+          activeCard.classList.add('shake');
           activeCard = null;
         }, 700);
         e.target.removeEventListener('click', clicked);
@@ -97,12 +97,12 @@ const newGame = () => {
 
   // Remove all temporary classes and showing cards for 3 seconds
   cards.forEach((card) => {
-    card.classList.remove('tada');
+    card.classList.remove('shake');
     card.classList.add('card__flipped');
     setTimeout(() => {
       const currentCard = card;
       currentCard.classList.remove('card__flipped');
-    }, 4000);
+    }, 1000);
   });
 
   // Clicking on cards

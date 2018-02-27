@@ -1,4 +1,41 @@
 @import url(http://weloveiconfonts.com/api/?family=maki);
+@-webkit-keyframes shake {
+  10%, 90% {
+    -webkit-transform: rotateY(180deg) translate3d(-1px, 0, 0) rotate(-2deg);
+    transform: rotateY(180deg) translate3d(-1px, 0, 0) rotate(-2deg);
+  }
+  20%, 80% {
+    -webkit-transform: rotateY(180deg) translate3d(2px, 0, 0) rotate(2deg);
+    transform: rotateY(180deg) translate3d(2px, 0, 0) rotate(2deg);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: rotateY(180deg) translate3d(-4px, 0, 0) rotate(-5deg);
+    transform: rotateY(180deg) translate3d(-4px, 0, 0) rotate(-5deg);
+  }
+  40%, 60% {
+    -webkit-transform: rotateY(180deg) translate3d(4px, 0, 0) rotate(5deg);
+    transform: rotateY(180deg) translate3d(4px, 0, 0) rotate(5deg);
+  }
+}
+@keyframes shake {
+  10%, 90% {
+    -webkit-transform: rotateY(180deg) translate3d(-1px, 0, 0) rotate(-2deg);
+    transform: rotateY(180deg) translate3d(-1px, 0, 0) rotate(-2deg);
+  }
+  20%, 80% {
+    -webkit-transform: rotateY(180deg) translate3d(2px, 0, 0) rotate(2deg);
+    transform: rotateY(180deg) translate3d(2px, 0, 0) rotate(2deg);
+  }
+  30%, 50%, 70% {
+    -webkit-transform: rotateY(180deg) translate3d(-4px, 0, 0) rotate(-5deg);
+    transform: rotateY(180deg) translate3d(-4px, 0, 0) rotate(-5deg);
+  }
+  40%, 60% {
+    -webkit-transform: rotateY(180deg) translate3d(4px, 0, 0) rotate(5deg);
+    transform: rotateY(180deg) translate3d(4px, 0, 0) rotate(5deg);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +45,10 @@ html, body {
   width: 100vw;
   max-width: 100%;
   max-height: 100%;
-  background: #ccc;
+}
+
+body {
+  background: #e2e1e0;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -109,7 +149,6 @@ html, body {
   transition: -webkit-transform 0.7s;
   transition: transform 0.7s;
   transition: transform 0.7s, -webkit-transform 0.7s;
-  z-index: 100;
 }
 
 .card__front, .card__back {
@@ -124,6 +163,9 @@ html, body {
 
 .card__front {
   background: #ff0080;
+  -webkit-box-shadow: 0 3px 6px rgba(255, 0, 128, 0.3), 0 3px 12px rgba(255, 0, 128, 0.25), 0 3px 20px rgba(255, 0, 128, 0.2);
+  box-shadow: 0 3px 6px rgba(255, 0, 128, 0.3), 0 3px 12px rgba(255, 0, 128, 0.25), 0 3px 20px rgba(255, 0, 128, 0.2);
+  border-bottom: 1px solid #ff66b3;
 }
 
 .card__back {
@@ -139,6 +181,9 @@ html, body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -webkit-box-shadow: 0 3px 6px rgba(119, 0, 255, 0.3), 0 3px 12px rgba(119, 0, 255, 0.25), 0 3px 20px rgba(119, 0, 255, 0.2);
+  box-shadow: 0 3px 6px rgba(119, 0, 255, 0.3), 0 3px 12px rgba(119, 0, 255, 0.25), 0 3px 20px rgba(119, 0, 255, 0.2);
+  border-bottom: 1px solid #ad66ff;
 }
 
 .card__flipped {
@@ -150,6 +195,13 @@ html, body {
   font-size: 3.5rem;
   pointer-events: none;
   margin-bottom: 1rem;
+}
+
+.shake {
+  -webkit-animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  animation: shake 0.8s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .footer {
