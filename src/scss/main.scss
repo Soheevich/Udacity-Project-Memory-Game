@@ -90,14 +90,49 @@ html, body {
   grid-gap: 1em;
 }
 
-.main__card {
+.main__card-wrapper {
+  position: relative;
   box-sizing: border-box;
   display: flex;
   width: 100%;
-  height: 100px;
-  background: $card;
+  height: 260px;
+  perspective: 800px;
   justify-content: center;
   align-items: center;
+}
+
+.main__card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.7s;
+  z-index: 100;
+}
+
+.card__front, .card__back {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  pointer-events: none;
+}
+
+.card__front {
+  background: $card-front;
+}
+
+.card__back {
+  background: $card-back;
+  transform: rotateY( 180deg );
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.card__flipped {
+  transform: rotateY( 180deg );
 }
 
 .card__icon {
@@ -105,13 +140,9 @@ html, body {
   pointer-events: none;
 }
 
-.card__active {
-  border: 5px solid gold;
-}
-
 .card__pair {
-  border: 5px solid green;
-  background: $card-pair;
+  -webkit-animation-name: tada;
+  animation-name: tada;
 }
 
 // *****************

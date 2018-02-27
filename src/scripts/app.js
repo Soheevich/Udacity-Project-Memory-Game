@@ -52,26 +52,34 @@ const newGame = () => {
 
       // Clicking on the same card will remove its selection
       if (e.target === activeCard) {
-        activeCard.classList.remove('card__active');
+        activeCard.classList.remove('card__flipped');
         activeCard = null;
         movesNumber += 1;
         printMoves(movesNumber);
 
         // Got a pair, it'll mark them and remove event listeners
-      } else if (e.target.firstElementChild.className === activeCard.firstElementChild.className) {
-        e.target.classList.add('card__pair');
-        activeCard.classList.add('card__pair');
-        activeCard.classList.remove('card__active');
-        e.target.removeEventListener('click', clicked);
-        activeCard.removeEventListener('click', clicked);
-        activeCard = null;
+      } else if (e.target.querySelector('.card__icon').className === activeCard.querySelector('.card__icon').className) {
+        e.target.classList.add('card__flipped');
+        setTimeout(() => {
+          e.target.classList.add('card__pair');
+          activeCard.classList.add('card__pair');
+          e.target.removeEventListener('click', clicked);
+          activeCard.removeEventListener('click', clicked);
+          activeCard = null;
+        }, 700);
         movesNumber += 1;
         printMoves(movesNumber);
 
         // Wrong pair, remove selection from the both cards
       } else {
-        activeCard.classList.remove('card__active');
-        activeCard = null;
+        e.target.classList.add('card__flipped');
+
+        setTimeout(() => {
+          activeCard.classList.remove('card__flipped');
+          e.target.classList.remove('card__flipped');
+          activeCard = null;
+        }, 700);
+
         movesNumber += 1;
         printMoves(movesNumber);
       }
@@ -79,15 +87,15 @@ const newGame = () => {
       // Mark a card as selected one
     } else {
       activeCard = e.target;
-      activeCard.classList.add('card__active');
+      activeCard.classList.add('card__flipped');
     }
   };
 
-  const func = () => {
-    alert('Привет');
-  };
+  // const func = () => {
+  //   alert('Привет');
+  // };
 
-  setTimeout(func, 1000);
+  // setTimeout(func, 1000);
 
   // Calling functions to start the game
   shuffleCards();
@@ -95,7 +103,7 @@ const newGame = () => {
 
   // Remove all temporary classes
   cards.forEach((card) => {
-    card.classList.remove('card__active', 'card__pair');
+    card.classList.remove('card__flipped'); // TODO remove , 'card__pair'
   });
 
   // Clicking on cards
