@@ -61,12 +61,12 @@ const newGame = () => {
       } else if (e.target.querySelector('.card__icon').className === activeCard.querySelector('.card__icon').className) {
         e.target.classList.add('card__flipped');
         setTimeout(() => {
-          e.target.classList.add('card__pair');
-          activeCard.classList.add('card__pair');
-          e.target.removeEventListener('click', clicked);
-          activeCard.removeEventListener('click', clicked);
+          e.target.classList.add('tada');
+          activeCard.classList.add('tada');
           activeCard = null;
         }, 700);
+        e.target.removeEventListener('click', clicked);
+        activeCard.removeEventListener('click', clicked);
         movesNumber += 1;
         printMoves(movesNumber);
 
@@ -91,19 +91,13 @@ const newGame = () => {
     }
   };
 
-  // const func = () => {
-  //   alert('Привет');
-  // };
-
-  // setTimeout(func, 1000);
-
   // Calling functions to start the game
   shuffleCards();
   printMoves(movesNumber);
 
   // Remove all temporary classes
   cards.forEach((card) => {
-    card.classList.remove('card__flipped'); // TODO remove , 'card__pair'
+    card.classList.remove('card__flipped', 'tada');
   });
 
   // Clicking on cards

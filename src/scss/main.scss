@@ -20,7 +20,7 @@ html, body {
   max-width: 100%;
   max-height: 100%;
   display: grid;
-  grid-template: repeat(4, auto) / auto 75vw auto;
+  grid-template: repeat(4, auto) / auto minmax(min-content, 75vw) auto;
   grid-template-areas:
     "h h h"
     "n n n"
@@ -85,8 +85,9 @@ html, body {
 
 .main__board {
   width: 100%;
+  justify-content: center;
   display: grid;
-  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
+  grid-template: repeat(4, min-content) / repeat(4, min-content);
   grid-gap: 1em;
 }
 
@@ -94,8 +95,8 @@ html, body {
   position: relative;
   box-sizing: border-box;
   display: flex;
-  width: 100%;
-  height: 260px;
+  width: 130px;
+  height: 130px;
   perspective: 800px;
   justify-content: center;
   align-items: center;
@@ -128,7 +129,7 @@ html, body {
   transform: rotateY( 180deg );
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-items: center;
 }
 
 .card__flipped {
@@ -138,11 +139,7 @@ html, body {
 .card__icon {
   font-size:$font-icon;
   pointer-events: none;
-}
-
-.card__pair {
-  -webkit-animation-name: tada;
-  animation-name: tada;
+  margin-bottom: 1rem;
 }
 
 // *****************
