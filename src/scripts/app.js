@@ -1,17 +1,10 @@
 /* eslint-env browser */
 
-// *****************
-// VARIABLES
-// *****************
 const cards = document.querySelectorAll('.main__card');
 const cardsIcons = document.querySelectorAll('.card__icon');
 const buttonNewGame = document.querySelector('.main__new-game');
 const numberOfTurns = document.querySelector('.main__turns');
 
-
-// *****************
-// FUNCTIONS
-// *****************
 
 // Shuffle cards
 const shuffleCards = () => {
@@ -90,6 +83,12 @@ const newGame = () => {
     }
   };
 
+  const func = () => {
+    alert('Привет');
+  };
+
+  setTimeout(func, 1000);
+
   // Calling functions to start the game
   shuffleCards();
   printMoves(movesNumber);
@@ -102,10 +101,6 @@ const newGame = () => {
   // Clicking on cards
   cards.forEach(card => card.addEventListener('click', clicked));
 };
-
-// *****************
-// EVENT LISTENERS
-// *****************
 
 // Clicking on New Game button
 buttonNewGame.addEventListener('click', newGame);
