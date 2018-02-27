@@ -89,8 +89,8 @@ html, body {
   display: flex;
   width: 130px;
   height: 130px;
-  -webkit-perspective: 800px;
-  perspective: 800px;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;

@@ -95,9 +95,14 @@ const newGame = () => {
   shuffleCards();
   printMoves(movesNumber);
 
-  // Remove all temporary classes
+  // Remove all temporary classes and showing cards for 3 seconds
   cards.forEach((card) => {
-    card.classList.remove('card__flipped', 'tada');
+    card.classList.remove('tada');
+    card.classList.add('card__flipped');
+    setTimeout(() => {
+      const currentCard = card;
+      currentCard.classList.remove('card__flipped');
+    }, 4000);
   });
 
   // Clicking on cards
