@@ -197,6 +197,10 @@ body {
   margin-bottom: 1rem;
 }
 
+.card__no-events {
+  pointer-events: none;
+}
+
 .shake {
   -webkit-animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;

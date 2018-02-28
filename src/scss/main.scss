@@ -169,6 +169,10 @@ body {
   margin-bottom: 1rem;
 }
 
+.card__no-events {
+  pointer-events: none;
+}
+
 .shake {
   animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
   backface-visibility: hidden;
