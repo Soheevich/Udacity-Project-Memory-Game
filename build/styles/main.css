@@ -48,7 +48,7 @@ html, body {
 }
 
 body {
-  background: #e2e1e0;
+  background: #e9d4b9;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -161,14 +161,18 @@ body {
 }
 
 .card__back {
-  background: #e9d4b9;
-  background-image: repeating-linear-gradient(45deg, transparent 5px, rgba(11, 36, 45, 0.5) 5px, rgba(11, 36, 45, 0.5) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.5) 35px, rgba(211, 119, 111, 0.5) 40px, rgba(11, 36, 45, 0.5) 40px, rgba(11, 36, 45, 0.5) 50px, rgba(11, 36, 45, 0) 50px, rgba(11, 36, 45, 0) 60px, rgba(211, 119, 111, 0.5) 60px, rgba(211, 119, 111, 0.5) 70px, rgba(247, 179, 85, 0.5) 70px, rgba(247, 179, 85, 0.5) 80px, rgba(247, 179, 85, 0) 80px, rgba(247, 179, 85, 0) 90px, rgba(211, 119, 111, 0.5) 90px, rgba(211, 119, 111, 0.5) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 120px, rgba(11, 36, 45, 0.5) 120px, rgba(11, 36, 45, 0.5) 140px), repeating-linear-gradient(135deg, transparent 5px, rgba(11, 36, 45, 0.5) 5px, rgba(11, 36, 45, 0.5) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.5) 35px, rgba(211, 119, 111, 0.5) 40px, rgba(11, 36, 45, 0.5) 40px, rgba(11, 36, 45, 0.5) 50px, rgba(11, 36, 45, 0) 50px, rgba(11, 36, 45, 0) 60px, rgba(211, 119, 111, 0.5) 60px, rgba(211, 119, 111, 0.5) 70px, rgba(247, 179, 85, 0.5) 70px, rgba(247, 179, 85, 0.5) 80px, rgba(247, 179, 85, 0) 80px, rgba(247, 179, 85, 0) 90px, rgba(211, 119, 111, 0.5) 90px, rgba(211, 119, 111, 0.5) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 140px, rgba(11, 36, 45, 0.5) 140px, rgba(11, 36, 45, 0.5) 160px);
-  -webkit-box-shadow: 0 3px 6px rgba(8, 5, 2, 0.3), 0 3px 12px rgba(8, 5, 2, 0.25), 0 3px 20px rgba(8, 5, 2, 0.2);
-  box-shadow: 0 3px 6px rgba(8, 5, 2, 0.3), 0 3px 12px rgba(8, 5, 2, 0.25), 0 3px 20px rgba(8, 5, 2, 0.2);
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: repeating-linear-gradient(45deg, transparent, transparent 7px, rgba(255, 255, 255, 0.1) 7px, rgba(255, 255, 255, 0.1) 14px), repeating-linear-gradient(-45deg, transparent, transparent 7px, rgba(255, 255, 255, 0.1) 7px, rgba(255, 255, 255, 0.1) 14px), -webkit-gradient(linear, left top, right bottom, from(#336699), to(#334499));
+  background: repeating-linear-gradient(45deg, transparent, transparent 7px, rgba(255, 255, 255, 0.1) 7px, rgba(255, 255, 255, 0.1) 14px), repeating-linear-gradient(-45deg, transparent, transparent 7px, rgba(255, 255, 255, 0.1) 7px, rgba(255, 255, 255, 0.1) 14px), linear-gradient(to right bottom, #336699, #334499);
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3), 0 3px 12px rgba(0, 0, 0, 0.25), 0 3px 20px rgba(0, 0, 0, 0.2), inset 0px -25px 50px -10px rgba(102, 153, 204, 0.4);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3), 0 3px 12px rgba(0, 0, 0, 0.25), 0 3px 20px rgba(0, 0, 0, 0.2), inset 0px -25px 50px -10px rgba(102, 153, 204, 0.4);
 }
 
 .card__front {
-  background: #7700ff;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background: #eff0e6;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   display: -webkit-box;
@@ -180,9 +184,9 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-box-shadow: 0 3px 6px rgba(119, 0, 255, 0.3), 0 3px 12px rgba(119, 0, 255, 0.25), 0 3px 20px rgba(119, 0, 255, 0.2);
-  box-shadow: 0 3px 6px rgba(119, 0, 255, 0.3), 0 3px 12px rgba(119, 0, 255, 0.25), 0 3px 20px rgba(119, 0, 255, 0.2);
-  border-bottom: 1px solid #ad66ff;
+  -webkit-box-shadow: 0 3px 6px rgba(157, 163, 102, 0.3), 0 3px 12px rgba(157, 163, 102, 0.25), 0 3px 20px rgba(157, 163, 102, 0.2), inset 0px -25px 50px -10px #f1f1e8;
+  box-shadow: 0 3px 6px rgba(157, 163, 102, 0.3), 0 3px 12px rgba(157, 163, 102, 0.25), 0 3px 20px rgba(157, 163, 102, 0.2), inset 0px -25px 50px -10px #f1f1e8;
+  border-bottom: 1px solid #f1f2e9;
 }
 
 .card__flipped {

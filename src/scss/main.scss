@@ -20,6 +20,10 @@
   }
 }
 
+// :root {
+
+// }
+
 *{
   margin:0;
   padding:0;
@@ -141,23 +145,26 @@ body {
 }
 
 .card__back {
-  background: $card-back;
-  background-image: $background-img;
+  box-sizing: border-box;
+  background: $background-img;
   box-shadow: 0 3px 6px transparentize($card-back-shadow, 0.70), 
               0 3px 12px transparentize($card-back-shadow, 0.75),
-              0 3px 20px transparentize($card-back-shadow, 0.80);
+              0 3px 20px transparentize($card-back-shadow, 0.80),
+              inset 0px -25px 50px -10px transparentize(lighten($card-back, 20%), 0.60);
 }
 
 .card__front {
+  box-sizing: border-box;
   background: $card-front;
   transform: rotateY( 180deg );
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 3px 6px transparentize($card-front, 0.70), 
-              0 3px 12px transparentize($card-front, 0.75),
-              0 3px 20px transparentize($card-front, 0.80);
-  border-bottom: 1px solid lighten($card-front, 20%);
+  box-shadow: 0 3px 6px transparentize($card-front-shadow, 0.70), 
+              0 3px 12px transparentize($card-front-shadow, 0.75),
+              0 3px 20px transparentize($card-front-shadow, 0.80),
+              inset 0px -25px 50px -10px lighten($card-front, 0.90);
+  border-bottom: 1px solid lighten($card-front, 1%);
 }
 
 .card__flipped {
