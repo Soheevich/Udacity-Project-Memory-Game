@@ -2,8 +2,9 @@
 
 const cards = document.querySelectorAll('.main__card');
 const cardsIcons = document.querySelectorAll('.card__icon');
-const buttonNewGame = document.querySelector('.main__new-game');
-const numberOfTurns = document.querySelector('.main__turns');
+const buttonsNewGame = document.querySelectorAll('.main__new-game');
+const numberOfTurns = document.querySelectorAll('.main__turns');
+const modal = document.querySelector('.main__modal');
 
 
 // Shuffle cards
@@ -37,13 +38,16 @@ const shuffleCards = () => {
 
 // Print number of moves
 const printMoves = (num) => {
-  numberOfTurns.textContent = num + (num === 1 ? ' Move' : ' Moves');
+  numberOfTurns.forEach((text) => {
+    text.textContent = num + (num === 1 ? ' Move' : ' Moves');
+  });
 };
 
 // IIFE for a local scope for a new game
 (function autorun() {
   let activeCard = null;
   let movesNumber = 0;
+  let pairsFounded = 0;
   let canClick = true; // to prevent clicking on another cards while animation
 
   // On card click
@@ -76,10 +80,16 @@ const printMoves = (num) => {
           setTimeout(() => {
             canClick = true;
           }, 300);
+          if (pairsFounded === 8) {
+            setTimeout(() => {
+              modal.classList.add('modal__active');
+            }, 700);
+          }
         }, 700);
         e.target.classList.add('card__no-events');
         activeCard.classList.add('card__no-events');
         movesNumber += 1;
+        pairsFounded += 8;
         printMoves(movesNumber);
 
         // Wrong pair, remove selection from the both cards
@@ -128,12 +138,14 @@ const printMoves = (num) => {
   const newGame = () => {
     activeCard = null;
     movesNumber = 0;
+    pairsFounded = 0;
 
     // Calling functions to start the game
     shuffleCards();
     printMoves(movesNumber);
 
     // Remove all temporary classes and showing cards for 3 seconds
+    modal.classList.remove('modal__active');
     canClick = false;
     cards.forEach((card) => {
       card.classList.remove('shake', 'card__flipped', 'card__no-events', 'rubber');
@@ -154,7 +166,9 @@ const printMoves = (num) => {
   };
 
   // Clicking on New Game button
-  buttonNewGame.addEventListener('click', newGame);
+  buttonsNewGame.forEach((buttonNewGame) => {
+    buttonNewGame.addEventListener('click', newGame);
+  });
 
   // Clicking on cards
   cards.forEach((card) => {

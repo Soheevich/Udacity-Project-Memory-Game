@@ -48,47 +48,47 @@
 
 @-webkit-keyframes rubberBand {
   0% {
-    -webkit-transform: scale(1) rotateY(180deg);
-    transform: scale(1) rotateY(180deg);
+    -webkit-transform: rotateY(180deg) scale(1);
+    transform: rotateY(180deg) scale(1);
   }
   30% {
-    -webkit-transform: scaleX(1.25) scaleY(0.75) rotateY(180deg);
-    transform: scaleX(1.25) scaleY(0.75) rotateY(180deg);
+    -webkit-transform: rotateY(180deg) scaleX(1.25) scaleY(0.75);
+    transform: rotateY(180deg) scaleX(1.25) scaleY(0.75);
   }
   40% {
-    -webkit-transform: scaleX(0.75) scaleY(1.25) rotateY(180deg);
-    transform: scaleX(0.75) scaleY(1.25) rotateY(180deg);
+    -webkit-transform: rotateY(180deg) scaleX(0.75) scaleY(1.25);
+    transform: rotateY(180deg) scaleX(0.75) scaleY(1.25);
   }
   60% {
-    -webkit-transform: scaleX(1.15) scaleY(0.85) rotateY(180deg);
-    transform: scaleX(1.15) scaleY(0.85) rotateY(180deg);
+    -webkit-transform: rotateY(180deg) scaleX(1.15) scaleY(0.85);
+    transform: rotateY(180deg) scaleX(1.15) scaleY(0.85);
   }
   100% {
-    -webkit-transform: scale(1) rotateY(180deg);
-    transform: scale(1) rotateY(180deg);
+    -webkit-transform: rotateY(180deg) scale(1);
+    transform: rotateY(180deg) scale(1);
   }
 }
 
 @keyframes rubberBand {
   0% {
-    -webkit-transform: scale(1) rotateY(180deg);
-    transform: scale(1) rotateY(180deg);
+    -webkit-transform: rotateY(180deg) scale(1);
+    transform: rotateY(180deg) scale(1);
   }
   30% {
-    -webkit-transform: scaleX(1.25) scaleY(0.75) rotateY(180deg);
-    transform: scaleX(1.25) scaleY(0.75) rotateY(180deg);
+    -webkit-transform: rotateY(180deg) scaleX(1.25) scaleY(0.75);
+    transform: rotateY(180deg) scaleX(1.25) scaleY(0.75);
   }
   40% {
-    -webkit-transform: scaleX(0.75) scaleY(1.25) rotateY(180deg);
-    transform: scaleX(0.75) scaleY(1.25) rotateY(180deg);
+    -webkit-transform: rotateY(180deg) scaleX(0.75) scaleY(1.25);
+    transform: rotateY(180deg) scaleX(0.75) scaleY(1.25);
   }
   60% {
-    -webkit-transform: scaleX(1.15) scaleY(0.85) rotateY(180deg);
-    transform: scaleX(1.15) scaleY(0.85) rotateY(180deg);
+    -webkit-transform: rotateY(180deg) scaleX(1.15) scaleY(0.85);
+    transform: rotateY(180deg) scaleX(1.15) scaleY(0.85);
   }
   100% {
-    -webkit-transform: scale(1) rotateY(180deg);
-    transform: scale(1) rotateY(180deg);
+    -webkit-transform: rotateY(180deg) scale(1);
+    transform: rotateY(180deg) scale(1);
   }
 }
 
@@ -164,7 +164,23 @@ body {
 }
 
 .main__new-game {
-  padding: 0.2em;
+  display: inline-block;
+  padding: 0.7em 1.5em;
+  font-size: 1.1em;
+  text-align: center;
+  border-radius: 4px;
+  color: #ebe0e0;
+  background-color: #6699cc;
+  border: none;
+  -webkit-box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.main__new-game:active {
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
 }
 
 .main__board {
@@ -176,6 +192,60 @@ body {
   grid-template: repeat(4, -webkit-min-content)/repeat(4, -webkit-min-content);
   grid-template: repeat(4, min-content)/repeat(4, min-content);
   grid-gap: 1em;
+}
+
+.main__modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 100;
+  -webkit-transform: translate(-50%, -50%) scale(0.5);
+  transform: translate(-50%, -50%) scale(0.5);
+  -webkit-transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: opacity 0.5s ease, -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease, -webkit-transform 0.5s ease;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.modal__content {
+  display: block;
+  width: 70%;
+  height: 55vh;
+  padding: 30px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.modal__active {
+  pointer-events: auto;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1);
 }
 
 .main__card-wrapper {
