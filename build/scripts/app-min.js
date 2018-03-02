@@ -70,8 +70,8 @@ const printMoves = (num) => {
         e.target.classList.add('card__flipped');
         canClick = false;
         setTimeout(() => {
-          e.target.classList.add('shake');
-          activeCard.classList.add('shake');
+          e.target.classList.add('rubber');
+          activeCard.classList.add('rubber');
           activeCard = null;
           setTimeout(() => {
             canClick = true;
@@ -136,7 +136,7 @@ const printMoves = (num) => {
     // Remove all temporary classes and showing cards for 3 seconds
     canClick = false;
     cards.forEach((card) => {
-      card.classList.remove('shake', 'card__flipped', 'card__no-events');
+      card.classList.remove('shake', 'card__flipped', 'card__no-events', 'rubber');
 
       // Timeout is needed to do properly opening animation to previously opened cards
       setTimeout(() => {

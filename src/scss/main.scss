@@ -169,8 +169,8 @@ body {
   animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
-.buzz {
-  animation: buzz 0.7s 2 ease-out;
+.rubber {
+  animation: rubberBand 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
 // *****************

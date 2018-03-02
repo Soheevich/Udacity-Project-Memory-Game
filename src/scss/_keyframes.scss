@@ -20,3 +20,25 @@
     transform: rotateY(180deg) translate3d(4px, 0, 0) rotate(5deg);
   }
 }
+
+@keyframes rubberBand {
+  0% {
+    transform: scale(1) rotateY(180deg);
+  }
+
+  30% {
+    transform: scaleX(1.25) scaleY(0.75) rotateY(180deg);
+  }
+
+  40% {
+    transform: scaleX(0.75) scaleY(1.25) rotateY(180deg);
+  }
+
+  60% {
+    transform: scaleX(1.15) scaleY(0.85) rotateY(180deg);
+  }
+
+  100% {
+    transform: scale(1) rotateY(180deg);
+  }
+}
