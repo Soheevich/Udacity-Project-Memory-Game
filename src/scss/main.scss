@@ -219,6 +219,11 @@ body {
 
 .rubber {
   animation: rubberBand 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+
+  .card__front {
+    border: 5px solid $border-win;
+    background: lighten($border-win, 30%);
+  }
 }
 
 // *****************

@@ -344,6 +344,11 @@ body {
   animation: rubberBand 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
 }
 
+.rubber .card__front {
+  border: 5px solid #f3c33f;
+  background: #fcf0cf;
+}
+
 .footer {
   grid-area: f;
 }
