@@ -1,0 +1,22 @@
+@keyframes shake {
+  10%,
+  90% {
+    transform: rotateY(180deg) translate3d(-1px, 0, 0) rotate(-2deg);
+  }
+
+  20%,
+  80% {
+    transform: rotateY(180deg) translate3d(2px, 0, 0) rotate(2deg);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: rotateY(180deg) translate3d(-4px, 0, 0) rotate(-5deg);
+  }
+
+  40%,
+  60% {
+    transform: rotateY(180deg) translate3d(4px, 0, 0) rotate(5deg);
+  }
+}

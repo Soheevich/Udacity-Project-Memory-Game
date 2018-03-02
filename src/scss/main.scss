@@ -1,35 +1,18 @@
 @import 'variables';
-@import 'functions';
+@import 'keyframes';
 @import url(http://weloveiconfonts.com/api/?family=maki);
-
-@keyframes shake {
-  10%, 90% {
-    transform: rotateY( 180deg ) translate3d(-1px, 0, 0) rotate(-2deg);
-  }
-  
-  20%, 80% {
-    transform: rotateY( 180deg ) translate3d(2px, 0, 0) rotate(2deg);
-  }
-
-  30%, 50%, 70% {
-    transform: rotateY( 180deg ) translate3d(-4px, 0, 0) rotate(-5deg);
-  }
-
-  40%, 60% {
-    transform: rotateY( 180deg ) translate3d(4px, 0, 0) rotate(5deg);
-  }
-}
 
 // :root {
 
 // }
 
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-html, body {
+html,
+body {
   width: 100vw;
   max-width: 100%;
   max-height: 100%;
@@ -46,10 +29,10 @@ body {
   display: grid;
   grid-template: repeat(4, auto) / auto minmax(min-content, 75vw) auto;
   grid-template-areas:
-    "h h h"
-    "n n n"
-    ". m ."
-    "f f f";
+    'h h h'
+    'n n n'
+    '. m .'
+    'f f f';
 }
 
 /* maki */
@@ -64,9 +47,9 @@ body {
 .header {
   grid-area: h;
   text-align: center;
+  font-family: $font-title;
+  // font-size: 2em;
 }
-
-
 
 // *****************
 // NAVIGATION
@@ -88,7 +71,6 @@ body {
   padding: 1em;
 }
 
-
 // *****************
 // MAIN
 // *****************
@@ -104,7 +86,7 @@ body {
 }
 
 .main__new-game {
-    padding: 0.2em;
+  padding: 0.2em;
 }
 
 .main__board {
@@ -134,7 +116,8 @@ body {
   transition: all 0.7s;
 }
 
-.card__front, .card__back {
+.card__front,
+.card__back {
   position: absolute;
   display: block;
   width: 100%;
@@ -147,34 +130,35 @@ body {
 .card__back {
   box-sizing: border-box;
   background: $background-img;
-  box-shadow: 0 3px 6px transparentize($card-back-shadow, 0.70), 
+  box-shadow: 0 3px 6px transparentize($card-back-shadow, 0.7),
               0 3px 12px transparentize($card-back-shadow, 0.75),
-              0 3px 20px transparentize($card-back-shadow, 0.80),
-              inset 0px -25px 50px -10px transparentize(lighten($card-back, 20%), 0.60);
+              0 3px 20px transparentize($card-back-shadow, 0.8),
+              inset 0px -25px 50px -10px transparentize(lighten($card-back, 20%), 0.6);
 }
 
 .card__front {
   box-sizing: border-box;
   background: $card-front;
-  transform: rotateY( 180deg );
+  transform: rotateY(180deg);
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 3px 6px transparentize($card-front-shadow, 0.70), 
+  box-shadow: 0 3px 6px transparentize($card-front-shadow, 0.7),
               0 3px 12px transparentize($card-front-shadow, 0.75),
-              0 3px 20px transparentize($card-front-shadow, 0.80),
-              inset 0px -25px 50px -10px lighten($card-front, 0.90);
-  border-bottom: 1px solid lighten($card-front, 1%);
+              0 3px 20px transparentize($card-front-shadow, 0.8),
+              inset 0px -25px 50px -10px lighten($card-front, 0.9);
+  border: 5px solid lighten($card-back, 30%);
 }
 
 .card__flipped {
-  transform: rotateY( 180deg );
+  transform: rotateY(180deg);
 }
 
 .card__icon {
-  font-size:$font-icon;
+  font-size: $font-icon;
   pointer-events: none;
   margin-bottom: 1rem;
+  color: darken($card-back, 25%);
 }
 
 .card__no-events {
@@ -182,8 +166,11 @@ body {
 }
 
 .shake {
-  animation: shake 0.7s cubic-bezier(.36,.07,.19,.97) both;
-  backface-visibility: hidden;
+  animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+}
+
+.buzz {
+  animation: buzz 0.7s 2 ease-out;
 }
 
 // *****************

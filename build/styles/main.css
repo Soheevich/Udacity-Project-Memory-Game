@@ -1,36 +1,46 @@
 @import url(http://weloveiconfonts.com/api/?family=maki);
 @-webkit-keyframes shake {
-  10%, 90% {
+  10%,
+  90% {
     -webkit-transform: rotateY(180deg) translate3d(-1px, 0, 0) rotate(-2deg);
     transform: rotateY(180deg) translate3d(-1px, 0, 0) rotate(-2deg);
   }
-  20%, 80% {
+  20%,
+  80% {
     -webkit-transform: rotateY(180deg) translate3d(2px, 0, 0) rotate(2deg);
     transform: rotateY(180deg) translate3d(2px, 0, 0) rotate(2deg);
   }
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     -webkit-transform: rotateY(180deg) translate3d(-4px, 0, 0) rotate(-5deg);
     transform: rotateY(180deg) translate3d(-4px, 0, 0) rotate(-5deg);
   }
-  40%, 60% {
+  40%,
+  60% {
     -webkit-transform: rotateY(180deg) translate3d(4px, 0, 0) rotate(5deg);
     transform: rotateY(180deg) translate3d(4px, 0, 0) rotate(5deg);
   }
 }
 @keyframes shake {
-  10%, 90% {
+  10%,
+  90% {
     -webkit-transform: rotateY(180deg) translate3d(-1px, 0, 0) rotate(-2deg);
     transform: rotateY(180deg) translate3d(-1px, 0, 0) rotate(-2deg);
   }
-  20%, 80% {
+  20%,
+  80% {
     -webkit-transform: rotateY(180deg) translate3d(2px, 0, 0) rotate(2deg);
     transform: rotateY(180deg) translate3d(2px, 0, 0) rotate(2deg);
   }
-  30%, 50%, 70% {
+  30%,
+  50%,
+  70% {
     -webkit-transform: rotateY(180deg) translate3d(-4px, 0, 0) rotate(-5deg);
     transform: rotateY(180deg) translate3d(-4px, 0, 0) rotate(-5deg);
   }
-  40%, 60% {
+  40%,
+  60% {
     -webkit-transform: rotateY(180deg) translate3d(4px, 0, 0) rotate(5deg);
     transform: rotateY(180deg) translate3d(4px, 0, 0) rotate(5deg);
   }
@@ -41,14 +51,15 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   width: 100vw;
   max-width: 100%;
   max-height: 100%;
 }
 
 body {
-  background: #e9d4b9;
+  background: #ecf2f9;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -58,7 +69,7 @@ body {
   display: grid;
   grid-template: repeat(4, auto)/auto minmax(-webkit-min-content, 75vw) auto;
   grid-template: repeat(4, auto)/auto minmax(min-content, 75vw) auto;
-  grid-template-areas: "h h h" "n n n" ". m ." "f f f";
+  grid-template-areas: 'h h h' 'n n n' '. m .' 'f f f';
 }
 
 /* maki */
@@ -69,6 +80,7 @@ body {
 .header {
   grid-area: h;
   text-align: center;
+  font-family: "Acme", sans-serif;
 }
 
 .nav {
@@ -149,7 +161,8 @@ body {
   transition: all 0.7s;
 }
 
-.card__front, .card__back {
+.card__front,
+.card__back {
   position: absolute;
   display: block;
   width: 100%;
@@ -186,7 +199,7 @@ body {
   align-items: center;
   -webkit-box-shadow: 0 3px 6px rgba(157, 163, 102, 0.3), 0 3px 12px rgba(157, 163, 102, 0.25), 0 3px 20px rgba(157, 163, 102, 0.2), inset 0px -25px 50px -10px #f1f1e8;
   box-shadow: 0 3px 6px rgba(157, 163, 102, 0.3), 0 3px 12px rgba(157, 163, 102, 0.25), 0 3px 20px rgba(157, 163, 102, 0.2), inset 0px -25px 50px -10px #f1f1e8;
-  border-bottom: 1px solid #f1f2e9;
+  border: 5px solid #8cb3d9;
 }
 
 .card__flipped {
@@ -198,6 +211,7 @@ body {
   font-size: 3.5rem;
   pointer-events: none;
   margin-bottom: 1rem;
+  color: #132639;
 }
 
 .card__no-events {
@@ -207,8 +221,11 @@ body {
 .shake {
   -webkit-animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
   animation: shake 0.7s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+}
+
+.buzz {
+  -webkit-animation: buzz 0.7s 2 ease-out;
+  animation: buzz 0.7s 2 ease-out;
 }
 
 .footer {
