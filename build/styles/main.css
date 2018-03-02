@@ -145,10 +145,8 @@ body {
   height: 100%;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  -webkit-transition: -webkit-transform 0.7s;
-  transition: -webkit-transform 0.7s;
-  transition: transform 0.7s;
-  transition: transform 0.7s, -webkit-transform 0.7s;
+  -webkit-transition: all 0.7s;
+  transition: all 0.7s;
 }
 
 .card__front, .card__back {
@@ -159,16 +157,17 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   pointer-events: none;
-}
-
-.card__front {
-  background: #ff0080;
-  -webkit-box-shadow: 0 3px 6px rgba(255, 0, 128, 0.3), 0 3px 12px rgba(255, 0, 128, 0.25), 0 3px 20px rgba(255, 0, 128, 0.2);
-  box-shadow: 0 3px 6px rgba(255, 0, 128, 0.3), 0 3px 12px rgba(255, 0, 128, 0.25), 0 3px 20px rgba(255, 0, 128, 0.2);
-  border-bottom: 1px solid #ff66b3;
+  border-radius: 0.5rem;
 }
 
 .card__back {
+  background: #e9d4b9;
+  background-image: repeating-linear-gradient(45deg, transparent 5px, rgba(11, 36, 45, 0.5) 5px, rgba(11, 36, 45, 0.5) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.5) 35px, rgba(211, 119, 111, 0.5) 40px, rgba(11, 36, 45, 0.5) 40px, rgba(11, 36, 45, 0.5) 50px, rgba(11, 36, 45, 0) 50px, rgba(11, 36, 45, 0) 60px, rgba(211, 119, 111, 0.5) 60px, rgba(211, 119, 111, 0.5) 70px, rgba(247, 179, 85, 0.5) 70px, rgba(247, 179, 85, 0.5) 80px, rgba(247, 179, 85, 0) 80px, rgba(247, 179, 85, 0) 90px, rgba(211, 119, 111, 0.5) 90px, rgba(211, 119, 111, 0.5) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 120px, rgba(11, 36, 45, 0.5) 120px, rgba(11, 36, 45, 0.5) 140px), repeating-linear-gradient(135deg, transparent 5px, rgba(11, 36, 45, 0.5) 5px, rgba(11, 36, 45, 0.5) 10px, rgba(211, 119, 111, 0) 10px, rgba(211, 119, 111, 0) 35px, rgba(211, 119, 111, 0.5) 35px, rgba(211, 119, 111, 0.5) 40px, rgba(11, 36, 45, 0.5) 40px, rgba(11, 36, 45, 0.5) 50px, rgba(11, 36, 45, 0) 50px, rgba(11, 36, 45, 0) 60px, rgba(211, 119, 111, 0.5) 60px, rgba(211, 119, 111, 0.5) 70px, rgba(247, 179, 85, 0.5) 70px, rgba(247, 179, 85, 0.5) 80px, rgba(247, 179, 85, 0) 80px, rgba(247, 179, 85, 0) 90px, rgba(211, 119, 111, 0.5) 90px, rgba(211, 119, 111, 0.5) 110px, rgba(211, 119, 111, 0) 110px, rgba(211, 119, 111, 0) 140px, rgba(11, 36, 45, 0.5) 140px, rgba(11, 36, 45, 0.5) 160px);
+  -webkit-box-shadow: 0 3px 6px rgba(164, 115, 50, 0.3), 0 3px 12px rgba(164, 115, 50, 0.25), 0 3px 20px rgba(164, 115, 50, 0.2);
+  box-shadow: 0 3px 6px rgba(164, 115, 50, 0.3), 0 3px 12px rgba(164, 115, 50, 0.25), 0 3px 20px rgba(164, 115, 50, 0.2);
+}
+
+.card__front {
   background: #7700ff;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
