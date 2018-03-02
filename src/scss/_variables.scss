@@ -1,7 +1,7 @@
-$body-bg: #e2e1e0;
-$card-front: #7700ff;
+$body-bg: hsl(30, 3%, 88%);
+$card-front: hsl(268, 100%, 50%);
 $card-back: hsl(34, 53%, 82%);
-$card-back-shadow: darken($card-back, 60%);
+$card-back-shadow: darken($card-back, 70%);
 $background-img: repeating-linear-gradient(45deg, transparent 5px, hsla(197, 62%, 11%, 0.5) 5px, hsla(197, 62%, 11%, 0.5) 10px,                  
   hsla(5, 53%, 63%, 0) 10px, hsla(5, 53%, 63%, 0) 35px, hsla(5, 53%, 63%, 0.5) 35px, hsla(5, 53%, 63%, 0.5) 40px,
   hsla(197, 62%, 11%, 0.5) 40px, hsla(197, 62%, 11%, 0.5) 50px, hsla(197, 62%, 11%, 0) 50px, hsla(197, 62%, 11%, 0) 60px,                
