@@ -77,6 +77,8 @@ body {
 
 .main {
   grid-area: m;
+  display: flex;
+  flex-direction: column;
 }
 
 .main__controls {
@@ -104,11 +106,13 @@ body {
 }
 
 .main__board {
-  width: 100%;
-  justify-content: center;
+  height: 70vh;
+  width: 70vh;
+  max-width: 100vw;
   display: grid;
-  grid-template: repeat(4, min-content) / repeat(4, min-content);
+  grid-template: repeat(4, 1fr)/repeat(4, 1fr);
   grid-gap: 1em;
+  margin: 0 auto;
 }
 
 .main__modal {
@@ -149,8 +153,8 @@ body {
   position: relative;
   box-sizing: border-box;
   display: flex;
-  width: 130px;
-  height: 130px;
+  width: 100%;
+  height: 100%;
   perspective: 1200px;
   justify-content: center;
   align-items: center;
