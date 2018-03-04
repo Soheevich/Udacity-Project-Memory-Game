@@ -89,7 +89,7 @@ const printMoves = (num) => {
         e.target.classList.add('card__no-events');
         activeCard.classList.add('card__no-events');
         movesNumber += 1;
-        pairsFounded += 4;
+        pairsFounded += 1;
         printMoves(movesNumber);
 
         // Wrong pair, remove selection from the both cards
@@ -160,7 +160,7 @@ const printMoves = (num) => {
           setTimeout(() => {
             canClick = true;
           }, 300);
-        }, 2000); // number of milliseconds to show the cards at the start of the game
+        }, 5000); // number of milliseconds to show the cards at the start of the game
       }, 0);
     });
   };
