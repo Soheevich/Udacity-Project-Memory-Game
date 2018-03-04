@@ -1,4 +1,4 @@
-$body-bg: hsl(45, 99%, 63%);
+$body-bg: hsl(198, 100%, 99%);
 $card-front: hsl(66, 25%, 92%);
 $card-back: hsl(210, 50%, 40%);
 $text-light: hsl(0, 23%, 90%);
@@ -20,8 +20,7 @@ $background-img: repeating-linear-gradient(
     hsla(0, 0%, 100%, 0.1) 7px,
     hsla(0, 0%, 100%, 0.1) 14px
   ),
-  linear-gradient(to right bottom, hsl(210, 50%, 40%), hsl(230, 50%, 40%));
+  linear-gradient(to right bottom, hsl(210, 50%, 40%), hsl(250, 50%, 40%));
 
-$font-main: 'Montserrat', sans-serif;
-$font-title: 'Acme', sans-serif;
+$font-main: 'Lato', sans-serif;
 $font-icon: 3.5rem;
