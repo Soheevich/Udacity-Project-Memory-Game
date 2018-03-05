@@ -43,11 +43,11 @@
       'maki-cinema',
       'maki-college',
       'maki-harbor',
-      'maki-town-hall'
+      'maki-town-hall',
     ];
 
     // Function to shuffle cards indexes
-    const shuffleArray = array => {
+    const shuffleArray = (array) => {
       const output = array.slice(0);
       for (let i = array.length - 1; i > 0; i -= 1) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -73,14 +73,14 @@
   };
 
   // Print number of moves
-  const printMoves = num => {
-    numberOfTurns.forEach(text => {
+  const printMoves = (num) => {
+    numberOfTurns.forEach((text) => {
       text.textContent = num + (num === 1 ? ' Move' : ' Moves');
     });
   };
 
   // Changing rating
-  const rating = moves => {
+  const rating = (moves) => {
     if (moves > 14) {
       if (moves < 20) {
         stars[2].textContent = '☆';
@@ -96,13 +96,13 @@
   };
 
   // Print time
-  const printTime = time => {
+  const printTime = (time) => {
     timer.textContent = time;
     modalTimer.textContent = time;
   };
 
   // Clock function
-  const clock = action => {
+  const clock = (action) => {
     if (action === 'start') {
       timerId = setInterval(() => {
         totalTime += 1;
@@ -114,7 +114,7 @@
   };
 
   // On card click
-  const clicked = e => {
+  const clicked = (e) => {
     if (activeCard && canClick) {
       // Every click after selecting any card will be counted as one move
       rating(movesNumber);
@@ -219,12 +219,12 @@
     // Remove all temporary classes and showing cards for 3 seconds
     modal.classList.remove('modal__active');
     canClick = false;
-    cards.forEach(card => {
+    cards.forEach((card) => {
       card.classList.remove(
         'shake',
         'card__flipped',
         'card__no-events',
-        'rubber'
+        'rubber',
       );
 
       // Timeout is needed to do properly opening animation to previously opened cards
@@ -245,15 +245,15 @@
   };
 
   // Clicking on New Game button
-  buttonsNewGame.forEach(buttonNewGame => {
+  buttonsNewGame.forEach((buttonNewGame) => {
     buttonNewGame.addEventListener('click', newGame);
   });
 
   // Clicking on cards
-  cards.forEach(card => {
+  cards.forEach((card) => {
     card.addEventListener('click', clicked);
   });
 
   // Starting a new game
   newGame();
-})();
+}());
