@@ -24,10 +24,10 @@ body {
 }
 
 .grid {
-  max-width: 100%;
+  max-width: 100vw;
   max-height: 100%;
   display: grid;
-  grid-template: repeat(3, auto) / auto minmax(min-content, 75vw) auto;
+  grid-template: 70px calc(100vh - 100px) 30px / auto min-content auto;
   grid-template-areas:
     'h h h'
     '. m .'
@@ -61,9 +61,11 @@ body {
 }
 
 .main__controls {
+  box-sizing: border-box;
   display: flex;
-  justify-content: space-around;
-  margin-bottom: 1em;
+  justify-content: space-between;
+  padding-bottom: 1em;
+  height: 50px;
 }
 
 .main__new-game {
@@ -75,8 +77,7 @@ body {
   color: $text-light;
   background-color: lighten($card-back, 10%);
   border: none;
-  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 
-              0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
   transition: all 0.15s ease;
 
   &:active {
@@ -85,11 +86,12 @@ body {
 }
 
 .main__board {
-  height: 70vh;
-  width: 70vh;
-  max-width: 100vw;
+  height: calc(100vh - 150px);
+  width: calc(100vh - 150px);
+  max-height: calc(100vh - 150px);
+  max-width: 95vw;
   display: grid;
-  grid-template: repeat(4, 1fr)/repeat(4, 1fr);
+  grid-template: repeat(4, 1fr) / repeat(4, 1fr);
   grid-gap: 1em;
   margin: 0 auto;
 }
@@ -172,9 +174,9 @@ body {
   box-sizing: border-box;
   background: $background-img;
   box-shadow: 0 3px 6px transparentize($card-back-shadow, 0.7),
-              0 3px 12px transparentize($card-back-shadow, 0.75),
-              0 3px 20px transparentize($card-back-shadow, 0.8),
-              inset 0px -25px 50px -10px transparentize(lighten($card-back, 20%), 0.6);
+    0 3px 12px transparentize($card-back-shadow, 0.75),
+    0 3px 20px transparentize($card-back-shadow, 0.8),
+    inset 0px -25px 50px -10px transparentize(lighten($card-back, 20%), 0.6);
 }
 
 .card__front {
@@ -185,9 +187,9 @@ body {
   justify-content: center;
   align-items: center;
   box-shadow: 0 3px 6px transparentize($card-front-shadow, 0.7),
-              0 3px 12px transparentize($card-front-shadow, 0.75),
-              0 3px 20px transparentize($card-front-shadow, 0.8),
-              inset 0px -25px 50px -10px lighten($card-front, 0.9);
+    0 3px 12px transparentize($card-front-shadow, 0.75),
+    0 3px 20px transparentize($card-front-shadow, 0.8),
+    inset 0px -25px 50px -10px lighten($card-front, 0.9);
   border: 5px solid lighten($card-back, 30%);
 }
 
@@ -226,5 +228,18 @@ body {
 .footer {
   grid-area: f;
   text-align: center;
-  margin-top: 1em;
+  padding-top: 0.5em;
+}
+
+@media screen and (max-width: 500px) {
+  .card__icon {
+    font-size: $font-icon-small;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .card__icon {
+    font-size: $font-icon-extrasmall;
+  }
 }

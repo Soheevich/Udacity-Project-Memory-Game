@@ -5,7 +5,20 @@ const cardsIcons = document.querySelectorAll('.card__icon');
 const buttonsNewGame = document.querySelectorAll('.main__new-game');
 const numberOfTurns = document.querySelectorAll('.main__turns');
 const modal = document.querySelector('.main__modal');
+const board = document.querySelector('.main__board');
 
+// Responsible board size
+const responsive = () => {
+  const width = board.offsetWidth;
+  const height = board.offsetHeight;
+
+  if (height > width) {
+    console.log('works');
+    board.style.height = `${width}px`;
+  } else if (width > height) {
+    board.style.width = `${height}px`;
+  }
+};
 
 // Shuffle cards
 const shuffleCards = () => {
@@ -139,6 +152,9 @@ const printMoves = (num) => {
     activeCard = null;
     movesNumber = 0;
     pairsFounded = 0;
+
+    // Calling responsible size of the main board function
+    responsive();
 
     // Calling functions to start the game
     shuffleCards();
