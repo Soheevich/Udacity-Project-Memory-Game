@@ -154,7 +154,7 @@
         e.target.classList.add('card__no-events');
         activeCard.classList.add('card__no-events');
         movesNumber += 1;
-        pairsFounded += 8;
+        pairsFounded += 1;
         printMoves(movesNumber);
 
         // Wrong pair, remove selection from the both cards
