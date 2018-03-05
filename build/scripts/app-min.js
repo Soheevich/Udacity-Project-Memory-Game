@@ -235,6 +235,9 @@
       }, 0);
     });
 
+    stars.forEach(star => star.textContent = '★');
+    modalStars.forEach(modalStar => modalStar.textContent = '★');
+
     setTimeout(() => {
       canClick = true;
       clock('start');
