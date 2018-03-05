@@ -109,7 +109,6 @@
         printTime(`${Math.floor(totalTime / 60)}:${totalTime % 60}`);
       }, 1000);
     } else if (action === 'end') {
-      console.log('end');
       clearInterval(timerId);
     }
   };
