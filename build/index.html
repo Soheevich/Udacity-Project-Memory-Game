@@ -9,7 +9,6 @@
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
   <link rel="stylesheet" href="styles/main.css">
-  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 
 <body>
@@ -23,6 +22,11 @@
         <p class="main__turns">
           Number of Moves
         </p>
+        <h2 class="main__stars">
+          <span class="main__star">★</span>
+          <span class="main__star">★</span>
+          <span class="main__star">★</span>
+        </h2>
         <button class="main__new-game">
           New Game
         </button>
@@ -162,7 +166,13 @@
       <aside class="main__modal">
         <div class="modal__content">
           <h2>Congratulations! You Won!</h2>
-          <p>With <span class="main__turns"></span>.</p>
+          <p>With
+            <span class="main__turns"></span>.</p>
+          <p>Your rating is
+            <span class="modal__star">★</span>
+            <span class="modal__star">★</span>
+            <span class="modal__star">★</span>
+          </p>
           <button class="main__new-game">
             New Game
           </button>

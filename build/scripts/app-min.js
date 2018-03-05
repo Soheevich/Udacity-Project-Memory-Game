@@ -6,6 +6,8 @@ const buttonsNewGame = document.querySelectorAll('.main__new-game');
 const numberOfTurns = document.querySelectorAll('.main__turns');
 const modal = document.querySelector('.main__modal');
 const board = document.querySelector('.main__board');
+const stars = document.querySelectorAll('.main__star');
+const modalStars = document.querySelectorAll('.modal__star');
 
 // Responsible board size
 const responsive = () => {
@@ -56,6 +58,24 @@ const printMoves = (num) => {
   });
 };
 
+// Changing rating
+const rating = (moves) => {
+  if (moves > 14) {
+    if (moves < 20) {
+      stars[2].textContent = '☆';
+      modalStars[2].textContent = '☆';
+    }
+    else if (moves < 25) {
+      stars[1].textContent = '☆';
+      modalStars[1].textContent = '☆';
+    }
+    else if (moves < 30) {
+      stars[0].textContent = '☆';
+      modalStars[0].textContent = '☆';
+    }
+  }
+};
+
 // IIFE for a local scope for a new game
 (function autorun() {
   let activeCard = null;
@@ -67,6 +87,7 @@ const printMoves = (num) => {
   const clicked = (e) => {
     if (activeCard && canClick) {
       // Every click after selecting any card will be counted as one move
+      rating(movesNumber);
 
       // Clicking on the same card will remove its selection
       if (e.target === activeCard) {
