@@ -88,9 +88,6 @@
       } else if (moves < 25) {
         stars[1].textContent = '☆';
         modalStars[1].textContent = '☆';
-      } else if (moves < 30) {
-        stars[0].textContent = '☆';
-        modalStars[0].textContent = '☆';
       }
     }
   };
